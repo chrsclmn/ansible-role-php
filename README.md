@@ -1,5 +1,7 @@
 Ansible Role: PHP
-=========
+=================
+
+[![Build Status](https://travis-ci.org/chrsclmn/ansible-role-php.svg?branch=master)](https://travis-ci.org/chrsclmn/ansible-role-php)
 
 An Ansible role that installs PHP on Ubuntu 16.04.
 
