@@ -1,31 +1,24 @@
-Ansible Role: PHP
-=================
+# Ansible Role: PHP
 
 [![Build Status](https://travis-ci.org/chrsclmn/ansible-role-php.svg?branch=master)](https://travis-ci.org/chrsclmn/ansible-role-php)
 
 An Ansible role that installs PHP on Ubuntu 16.04.
 
-Role Variables
---------------
+## Role Variables
 
 	php_packages: []
 	php_pear_packages: []
 
-Dependencies
-------------
+## Dependencies
 
- * chrsclmn.apache
+- chrsclmn.apache
 
-Example Playbook
-----------------
+## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: webservers
+    - hosts: servers
       roles:
          - { role: chrsclmn.php }
 
-License
--------
+## License
 
 BSD
