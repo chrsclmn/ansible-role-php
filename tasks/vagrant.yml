@@ -1,0 +1,3 @@
+---
+- name: disable xdebug for php cli
+  command: phpdismod -s cli xdebug removes=/etc/php/7.0/cli/conf.d/20-xdebug.ini
