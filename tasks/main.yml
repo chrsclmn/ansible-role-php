@@ -3,8 +3,15 @@
   apt: name=libapache2-mod-php state=latest
   notify: reload apache
 
-- name: install php.ini
-  template: src=php.ini.j2 dest=/etc/php/7.0/apache2/php.ini owner=root group=root mode=0644
+- name: install php cli
+  apt: name=php-cli state=latest
+
+- name: install php.ini for apache
+  template: src=php.ini.apache.j2 dest=/etc/php/7.0/apache2/php.ini owner=root group=root mode=0644
+  notify: reload apache
+
+- name: install php.ini for cli
+  template: src=php.ini.cli.j2 dest=/etc/php/7.0/cli/php.ini owner=root group=root mode=0644
   notify: reload apache
 
 - name: install php packages
@@ -18,9 +25,6 @@
 - name: install pear packages
   pear: name={{ item }} state=present
   with_items: "{{ php_pear_packages }}"
-
-- name: install php cli
-  apt: name=php-cli state=latest
 
 - include: vagrant.yml
   when: is_vagrant is defined and is_vagrant
