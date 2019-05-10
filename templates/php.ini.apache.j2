@@ -798,7 +798,7 @@ file_uploads = On
 upload_max_filesize = {{ php_ini_apache_upload_max_filesize | default('2M') }}
 
 ; Maximum number of files that can be uploaded via a single request
-max_file_uploads = 20
+max_file_uploads = {{ php_ini_apache_max_file_uploads | default('20') }}
 
 ;;;;;;;;;;;;;;;;;;
 ; Fopen wrappers ;
